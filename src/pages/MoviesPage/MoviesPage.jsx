@@ -1,7 +1,16 @@
-export default function Movies () {
-    return (
-        <div>
-            <h1>Movies</h1>
-        </div>
-    );
+import { useState, useEffect } from "react";
+
+
+
+
+
+export default function Movies() {
+  return (
+    <div>
+      <form>
+        <input type="text" name="searchMovie" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  );
 }
