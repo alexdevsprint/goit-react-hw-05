@@ -30,3 +30,27 @@ export const fetchMovieDetails = async (movieId) => {
       return null;
     });
 };
+
+
+export const fetchMovieCast = async (movieId) => {
+  const url = `/movie/${movieId}/credits`;
+  return axios
+    .get(url, options)
+    .then((res) => res.data.cast)
+    .catch((err) => {
+      console.error(`Fetch error - Cast ${movieId}:`, err);
+      return [];
+    });
+};
+
+
+export const fetchMovieReviews = async (movieId) => {
+  const url = `/movie/${movieId}/reviews`;
+  return axios
+    .get(url, options)
+    .then((res) => res.data.results)
+    .catch((err) => {
+      console.error(`Fetch error - Reviews ${movieId}:`, err);
+      return [];
+    });
+};
