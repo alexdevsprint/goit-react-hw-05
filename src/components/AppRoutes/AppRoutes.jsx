@@ -9,7 +9,7 @@ export default function AppRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/movies" element={<MoviesPage />} />
-      <Route path="/movies/:movieID" element={<MovieDetailsPage />} />
+      <Route path="/movies/:movieId" element={<MovieDetailsPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
