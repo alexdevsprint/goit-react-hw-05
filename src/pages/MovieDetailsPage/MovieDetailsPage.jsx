@@ -22,6 +22,7 @@ export default function MovieDetailsPage() {
     getMovie();
   }, [movieId]);
 
+ 
   return (
     <div>
       <h1>Movie Details</h1>
