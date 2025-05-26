@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchMovieDetails } from "../../services/api";
+import MovieInfo from "../../components/MovieInfo/MovieInfo";
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -24,7 +25,7 @@ export default function MovieDetailsPage() {
   return (
     <div>
       <h1>Movie Details</h1>
-      {movie && <div> Response </div>}
+      {movie && <MovieInfo movie={movie}/>}
     </div>
   );
 }

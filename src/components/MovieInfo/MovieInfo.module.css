@@ -1,0 +1,14 @@
+.movieInfoContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.movieInfoImg {
+  width: 250px;
+}
+
+.movieInfoDesc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
