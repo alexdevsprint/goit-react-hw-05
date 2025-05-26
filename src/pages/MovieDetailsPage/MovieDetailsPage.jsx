@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+import { useParams, NavLink, Outlet  } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { fetchMovieDetails } from "../../services/api";
 import MovieInfo from "../../components/MovieInfo/MovieInfo";
+
 
 export default function MovieDetailsPage() {
   const { movieId } = useParams();
@@ -10,7 +11,6 @@ export default function MovieDetailsPage() {
   useEffect(() => {
     const getMovie = async () => {
       try {
-        
         const data = await fetchMovieDetails(movieId);
 
         setMovie(data);
@@ -19,13 +19,22 @@ export default function MovieDetailsPage() {
         console.log("Error");
       }
     };
-    getMovie();    
+    getMovie();
   }, [movieId]);
 
   return (
     <div>
       <h1>Movie Details</h1>
-      {movie && <MovieInfo movie={movie}/>}
+      {movie && <MovieInfo movie={movie} />}
+      <ul>
+        <li>
+          <NavLink to="cast">Cast</NavLink>
+        </li>
+        <li>
+          <NavLink to="reviews">Reviews</NavLink>
+        </li>
+      </ul>
+      <Outlet />
     </div>
   );
 }
