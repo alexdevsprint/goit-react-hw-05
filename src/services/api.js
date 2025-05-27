@@ -26,7 +26,7 @@ export const fetchMovieDetails = async (movieId) => {
     .get(url, options)
     .then((res) => res.data)
     .catch((err) => {
-      console.error(`Fetch error - Movie Details ${movieId}:`, err);
+      console.error('Fetch error - Movie Details', err);
       return null;
     });
 };
@@ -38,7 +38,7 @@ export const fetchMovieCast = async (movieId) => {
     .get(url, options)
     .then((res) => res.data.cast)
     .catch((err) => {
-      console.error(`Fetch error - Cast ${movieId}:`, err);
+      console.error('Fetch error - Cast', err);
       return [];
     });
 };
@@ -50,7 +50,21 @@ export const fetchMovieReviews = async (movieId) => {
     .get(url, options)
     .then((res) => res.data.results)
     .catch((err) => {
-      console.error(`Fetch error - Reviews ${movieId}:`, err);
+      console.error('Fetch error - Reviews', err);
+      return [];
+    });
+};
+
+
+export const fetchMovieSearch = async (query) => {
+   const url = `/search/movie?include_adult=false&language=en-US&page=1&query=${encodeURIComponent(
+    query,
+  )}`;
+  return axios
+    .get(url, options)
+    .then((res) => res.data.results)
+    .catch((err) => {
+      console.error('Error - Search Movie', err);
       return [];
     });
 };
