@@ -1,5 +1,5 @@
 import css from "./App.module.css";
-import Navigation from "./components/Navigation/Navigation";
+import AppNavigation from "./components/Navigation/AppNavigation";
 import AppRoutes from "./components/AppRoutes/AppRoutes";
 import { Toaster } from "react-hot-toast";
 
@@ -7,7 +7,7 @@ import { Toaster } from "react-hot-toast";
 function App() {
   return (
     <div>
-      <Navigation />      
+      <AppNavigation />      
       <AppRoutes />
       <Toaster position="bottom-right" reverseOrder={false} />
     </div>

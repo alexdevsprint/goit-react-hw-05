@@ -1,5 +1,12 @@
-import { useParams, NavLink, Outlet, useLocation, Link } from "react-router-dom";
-import { useEffect, useState, useRef } from "react";
+import css from "./MovieDetailsPage.module.css"
+import {
+  useParams,
+  NavLink,
+  Outlet,
+  useLocation,
+  Link,
+} from "react-router-dom";
+import { useEffect, useState, useRef, Suspense } from "react";
 import { fetchMovieDetails } from "../../services/api";
 import MovieInfo from "../../components/MovieInfo/MovieInfo";
 
@@ -25,7 +32,7 @@ export default function MovieDetailsPage() {
 
   return (
     <div>
-      <h1>Movie Details</h1>
+      <h1 className={css.title}>Movie Details</h1>
       <Link to={backlinkRef.current}>Go back</Link>
       {movie && <MovieInfo movie={movie} />}
       <ul>
@@ -36,7 +43,9 @@ export default function MovieDetailsPage() {
           <NavLink to="reviews">Reviews</NavLink>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<p>Loading page...</p>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 }

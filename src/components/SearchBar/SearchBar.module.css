@@ -1,18 +1,14 @@
-.header {
-  background-color: #b0ded9;
-  padding: 20px 0 25px;
-  margin-bottom: 20px;
+.header {  
+  padding-top: 20px;
+  padding-bottom: 20px;
+  
 }
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
+
 
 .searchForm {
   display: flex;
   gap: 10px;
-  justify-content: center;
+  
 }
 
 .searchForm input,

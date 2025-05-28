@@ -17,7 +17,7 @@ export default function SearchBar({ onSearchSubmit }) {
 
   return (
     <header className={css.header}>
-      <div className={css.container}>
+      <div>
         <h1 className={css.gallaryTitle}>Search Movie</h1>
         <form className={css.searchForm} onSubmit={handleFormSubmit}>
           <input
